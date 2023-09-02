@@ -1,0 +1,88 @@
+/* fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+*{font-family: Josefin Sans;}
+body{background-color: lightblue;}
+
+/* Default theme */
+:root {
+    --main-bg-color: #ffffff;
+    --top-row-bg-color: rgb(14, 173, 246);
+    --right-row-bg-color: rgb(12, 102, 205);
+    --rest-bg-color: #dcdcdc;
+    --text-color: #000000;
+}
+/* Black theme */
+[data-theme="black"] {
+    --main-bg-color: #000000;
+    --top-row-bg-color: #555555;
+    --right-row-bg-color: #FFA500;
+    --rest-bg-color: #4f4f4f;
+    --text-color: #ffffff;
+}
+
+/* Beige theme */
+[data-theme="beige"] {
+    --main-bg-color: #f5f5dc;
+    --top-row-bg-color: #808080;
+    --right-row-bg-color: #FF8C00;
+    --rest-bg-color: #dcdcdc;
+    --text-color: #000000;
+}
+.keys{
+    min-width: 150px;
+    max-width: 250px;
+    margin: auto;
+    border-radius: 25px;
+    background-color: var(--main-bg-color);
+    font-size: 20px;
+}
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 25px;
+}
+.section .n, .section .s{
+    padding: 15px;
+    border-radius: 50px; /* Makes the container a circle */
+    cursor: pointer;
+    background-color: var(--rest-bg-color);
+    color: var(--text-color);
+    margin: 5px;
+    height: 20px; width: 20px; text-align: center;
+}
+.section .n:hover, .section .s:hover{
+    transition: 0.5s;
+    opacity: 0.7;
+}
+.screen{
+    height: 50px;
+    max-width: 250px;
+    min-width: 150px;
+    font-size: 40px;
+    padding: 70px 20px 20px 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 10px;
+    text-align: right;
+    color: var(--text-color);
+}
+.screen::-webkit-scrollbar{width: 5px;}
+
+.section .s{
+    background-color: var(--right-row-bg-color);
+    color: white;
+}
+.section .clear, .section .del{
+    background-color: var(--top-row-bg-color);
+    color: white;
+}
+.theme-selector button{
+    outline: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-size: 18px; font-weight: bold;
+    border-radius: 15px; padding: 10px;
+}
